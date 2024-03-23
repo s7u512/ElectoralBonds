@@ -41,4 +41,4 @@ partywise_stats <- partywise_stats %>%
          TopPurchaser, TopPurchaserAmount, TopTenPurchaserAmount, ShareOfTopTenPurchasersInTotalEncashed)
 
 
-write.csv(partywise_stats, "party_wise_stats.csv")
+write.csv(partywise_stats, "party_wise_stats.csv", row.names = FALSE)
