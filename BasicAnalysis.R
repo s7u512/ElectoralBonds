@@ -1,3 +1,24 @@
+# source: https://github.com/DigitalIndiaArchiver/ElectoralBondsData
+
+rm(list = ls())
+
+library(tidyverse)
+library(readr)
+
+
+purchased <- read_csv("Resources/purchased.csv")
+encashed <- read_csv("Resources/encashed.csv")
+
+
+###########
+
+df1 <- encashed %>% group_by(`Name of the Political Party`) %>% summarise(sum = sum(Denominations))
+
+
+df2 <- purchased %>% group_by(`Name of the Purchaser`) %>% summarise(sum = sum(Denominations))
+
+
+############
 all_matched <- left_join(encashed, purchased)
 
 # Step 1: Calculate total encashed per party
